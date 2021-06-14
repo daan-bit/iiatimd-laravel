@@ -32,8 +32,8 @@ class AuthController extends Controller
         $cookie = cookie('jwt', $token, 60 * 24); // 1 dag
 
         return response([
-            'message' => "succesvol ingelogd" //$token
-        ])->withCookie($cookie);
+            'message' => "OK" //$token
+        ], 200)->withCookie($cookie);
     }
 
     public function user(){
@@ -44,7 +44,7 @@ class AuthController extends Controller
         $cookie = Cookie::forget('jwt');
 
         return response([
-            'message' => 'succesvol uitgelogd'
-        ])->withCookie($cookie);
+            'message' => 'OK'
+        ], 200)->withCookie($cookie);
     }
 }
