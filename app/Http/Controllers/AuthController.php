@@ -14,7 +14,8 @@ class AuthController extends Controller
         return User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password'))
+            'password' => Hash::make($request->input('password')),
+            'rol' => 'werknemer'
         ]);
     }
 
@@ -32,12 +33,22 @@ class AuthController extends Controller
         $cookie = cookie('jwt', $token, 60 * 24); // 1 dag
 
         return response([
-            'message' => "OK" //$token
+            'message' => "U bent ingelogd!" //$token
         ], 200)->withCookie($cookie);
     }
 
     public function user(){
-        return Auth::user();
+        $user = Auth::user();
+        if ($user != null) {
+        return response([
+            'user' => $user
+        ]);
+        if ($user == null) {
+        return response([
+                'message' => 'U bent niet ingelogd!'
+            ], 401); 
+    }
+    }
     }
 
     public function logout(){
