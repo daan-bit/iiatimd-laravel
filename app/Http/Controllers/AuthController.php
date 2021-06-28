@@ -35,7 +35,10 @@ class AuthController extends Controller
         return response([
             'message' => "U bent ingelogd!",
             'token'=> $token,
-            'rol' => $user->rol 
+            'rol' => $user->rol,
+            'user_id' => $user->id,
+            'naam' => $user->name,
+            'email' => $user->email 
         ], 200)->withCookie($cookie);
     }
 
