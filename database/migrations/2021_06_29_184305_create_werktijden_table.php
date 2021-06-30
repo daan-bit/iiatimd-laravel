@@ -17,10 +17,8 @@ class CreateWerktijdenTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
-            $table->dateTime('begin_shift')->nullable();
-            $table->string("aantal_uren_gewerkt");
-            $table->string("aantal_uren_pauze");
-            $table->dateTime("einde_shift")->nullable();
+            $table->string('begin_shift')->nullable();
+            $table->string("einde_shift")->nullable();
         });
     }
 

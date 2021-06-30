@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Werktijd extends Model
 {
     protected $table = 'werktijden';
+    protected $fillable = [
+        'id',
+        'user_id',
+        'begin_shift',
+        'einde_shift'
+    ];
+
+    public $timestamps = false;
     use HasFactory;
 }

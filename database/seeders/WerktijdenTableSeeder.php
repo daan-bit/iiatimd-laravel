@@ -15,10 +15,8 @@ class WerktijdenTableSeeder extends Seeder
     {
         DB::table('werktijden')->insert([
             'user_id' => 1, ////werknemer
-            'begin_shift' => NOW(),
-            'aantal_uren_gewerkt' => '09:00:00',
-            'aantal_uren_pauze' => '01:15:00',
-            'einde_shift' => NOW()
+            'begin_shift' => '30-06-2021 15:14:36',
+            'einde_shift' => '30-06-2021 20:15:00',
         ]);
         
         //

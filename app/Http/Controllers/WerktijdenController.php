@@ -29,4 +29,12 @@ class WerktijdenController extends Controller
         ]);
     }
 
+    public function store(Request $request) {
+        return Werktijd::create([
+            'user_id' => $request->input('user_id'),
+            'begin_shift' => $request->input('begin_shift'),
+            'einde_shift' => $request->input('einde_shift'),
+        ]);
+    }
+
 }

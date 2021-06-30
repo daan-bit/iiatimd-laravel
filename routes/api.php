@@ -20,6 +20,7 @@ Route::get('gebruikers', [App\Http\Controllers\UserController::class, 'index']);
 Route::get('werktijden', [App\Http\Controllers\WerktijdenController::class, 'index']);
 Route::get('werktijden/{id}', [App\Http\Controllers\WerktijdenController::class, 'show']);
 Route::get('werktijden/gebruiker/{id}', [App\Http\Controllers\WerktijdenController::class, 'gebruikerWerktijden']);
+Route::post('werktijden/store', [App\Http\Controllers\WerktijdenController::class, 'store']);
 
 
 Route::middleware('auth:sanctum')->group(function() {
