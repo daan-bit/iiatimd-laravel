@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserTableSeeder::class,
-           WerktijdenTableSeeder::class,           
+           WerktijdenTableSeeder::class, 
+           VakantiedagenTableSeeder::class,          
         ]);
         // \App\Models\User::factory(10)->create();
     }

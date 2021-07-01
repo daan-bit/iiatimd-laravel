@@ -21,6 +21,8 @@ Route::get('werktijden', [App\Http\Controllers\WerktijdenController::class, 'ind
 Route::get('werktijden/{id}', [App\Http\Controllers\WerktijdenController::class, 'show']);
 Route::get('werktijden/gebruiker/{id}', [App\Http\Controllers\WerktijdenController::class, 'gebruikerWerktijden']);
 Route::post('werktijden/store', [App\Http\Controllers\WerktijdenController::class, 'store']);
+Route::get('vakantiedagen', [App\Http\Controllers\VakantiedagenController::class, 'index']);
+Route::post('vakantiedagen/store', [App\Http\Controllers\VakantiedagenController::class, 'store']);
 
 
 Route::middleware('auth:sanctum')->group(function() {
