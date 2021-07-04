@@ -14,7 +14,7 @@ class CreateWerktijdenTable extends Migration
     public function up()
     {
         Schema::create('werktijden', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary();
+            $table->unsignedBigInteger('id')->primary()->default(1);
             $table->unsignedBigInteger('user_id');
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->string('begin_shift')->nullable();
