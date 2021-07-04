@@ -14,6 +14,7 @@ class WerktijdenTableSeeder extends Seeder
     public function run()
     {
         DB::table('werktijden')->insert([
+            'id' => 5,
             'user_id' => 1, ////werknemer
             'begin_shift' => '30-06-2021 15:14:36',
             'einde_shift' => '30-06-2021 20:15:00',

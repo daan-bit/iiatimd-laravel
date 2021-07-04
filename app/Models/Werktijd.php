@@ -17,5 +17,7 @@ class Werktijd extends Model
     ];
 
     public $timestamps = false;
+    public $incrementing = false;
+
     use HasFactory;
 }
