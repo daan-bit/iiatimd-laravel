@@ -19,6 +19,7 @@ class CreateWerktijdenTable extends Migration
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade');
             $table->string('begin_shift')->nullable();
             $table->string("einde_shift")->nullable();
+            $table->integer("inLaravelDB")->default(1);
         });
     }
 

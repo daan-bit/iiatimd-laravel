@@ -12,7 +12,8 @@ class Werktijd extends Model
         'id',
         'user_id',
         'begin_shift',
-        'einde_shift'
+        'einde_shift',
+        'inLaravelDB'
     ];
 
     public $timestamps = false;

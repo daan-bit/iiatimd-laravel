@@ -34,6 +34,7 @@ class WerktijdenController extends Controller
             'user_id' => $request->input('user_id'),
             'begin_shift' => $request->input('begin_shift'),
             'einde_shift' => $request->input('einde_shift'),
+            'inLararavelDB' => 1
         ]);
     }
 
