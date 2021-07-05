@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::get('gebruikers', [App\Http\Controllers\UserController::class, 'index']);
+Route::get('werktijden', [App\Http\Controllers\WerktijdenController::class, 'index']);
+Route::get('werktijden/{id}', [App\Http\Controllers\WerktijdenController::class, 'show']);
+Route::get('werktijden/gebruiker/{id}', [App\Http\Controllers\WerktijdenController::class, 'gebruikerWerktijden']);
+Route::post('werktijden/store', [App\Http\Controllers\WerktijdenController::class, 'store']);
+Route::get('vakantiedagen', [App\Http\Controllers\VakantiedagenController::class, 'index']);
+Route::post('vakantiedagen/store', [App\Http\Controllers\VakantiedagenController::class, 'store']);
+
+
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get('user', [App\Http\Controllers\AuthController::class, 'user']);
+    Route::post('logout', [App\Http\Controllers\AuthController::class, 'logout']);
 });
